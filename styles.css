@@ -1,0 +1,318 @@
+/* --- CSS Reset (modern, minimal) --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+html:focus-within {
+  scroll-behavior: smooth;
+}
+body {
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
+  line-height: 1.6;
+}
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+/* --- Theme --- */
+:root {
+  --bg: #0b0d12;
+  --bg-2: #0e1118;
+  --text: #e6e8ee;
+  --muted: #a9b0c0;
+  --card: #111520;
+  --card-2: #151a28;
+  --accent: #8ab4ff;
+  --accent-2: #c084fc;
+  --ring: rgba(138, 180, 255, 0.45);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+.matrix-theme {
+  --bg: #000;
+  --bg-2: #000;
+  --text: #0f0;
+  --muted: #0f0;
+  --card: #111;
+  --card-2: #111;
+  --accent: #0f0;
+  --accent-2: #0f0;
+  --ring: rgba(0, 255, 0, 0.45);
+  --shadow: 0 10px 30px rgba(0, 255, 0, 0.25);
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* Fancy radial background */
+.bg {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+      1000px 600px at 90% -10%,
+      rgba(138, 180, 255, 0.12),
+      transparent 60%
+    ),
+    radial-gradient(
+      800px 500px at -10% 20%,
+      rgba(192, 132, 252, 0.1),
+      transparent 55%
+    ),
+    radial-gradient(
+      600px 600px at 50% 110%,
+      rgba(138, 180, 255, 0.08),
+      transparent 50%
+    );
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Layout */
+.wrap {
+  max-width: 1000px;
+  margin-inline: auto;
+  padding: 32px 20px 60px;
+}
+.header {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 24px;
+  align-items: center;
+  margin: 32px 0;
+}
+@media (max-width: 640px) {
+  .header {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    text-align: center;
+    justify-items: center;
+  }
+  .actions {
+    justify-content: center;
+  }
+  .avatar-wrap {
+    margin-inline: auto;
+  }
+}
+
+.avatar-wrap {
+  position: relative;
+}
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 24px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow);
+  background: #222;
+}
+.intro h1 {
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.tagline {
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+/* Buttons */
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+}
+.btn {
+  appearance: none;
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: 0.2s transform, 0.2s filter;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn:hover {
+  transform: translateY(-1px);
+  filter: saturate(1.1);
+}
+.btn.ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+.btn.ghost:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Cards */
+.card {
+  margin-top: 20px;
+  background: linear-gradient(180deg, var(--card), var(--card-2));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  padding: 22px 20px 18px;
+  box-shadow: var(--shadow);
+}
+.card h2 {
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.card p {
+  color: var(--text);
+}
+.highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+.highlights li {
+  list-style: none;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font-size: 14px;
+}
+
+/* Socials */
+.socials {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+@media (max-width: 600px) {
+  .socials {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  text-decoration: none;
+  color: var(--text);
+  transition: 0.2s transform, 0.2s background, 0.2s border-color,
+    0.2s box-shadow;
+  will-change: transform;
+}
+.social i {
+  font-size: 20px;
+  opacity: 0.95;
+}
+.social span {
+  font-weight: 600;
+}
+.social:hover {
+  transform: translateY(-2px);
+  border-color: var(--ring);
+  box-shadow: 0 0 0 6px var(--ring);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Footer */
+.footer {
+  margin-top: 26px;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Matrix Pills */
+.pill-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+.pill-btn {
+  background: #444;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 4px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 30px;
+  cursor: pointer;
+  position: relative;
+  line-height: 1.2;
+  transition: 0.25s transform, 0.25s filter, 0.25s box-shadow;
+  user-select: none;
+}
+.pill-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.pill-btn:hover {
+  transform: translateY(-2px);
+  filter: saturate(1.15);
+}
+.pill-btn:active {
+  transform: translateY(0);
+  filter: brightness(0.85);
+}
+.pill-red {
+  background: radial-gradient(circle at 30% 30%, #ff4d4d, #7a0000 70%);
+  border: 1px solid rgba(255, 70, 70, 0.6);
+  box-shadow: 0 0 6px -1px rgba(255, 60, 60, 0.6) inset,
+    0 0 4px rgba(255, 40, 40, 0.5);
+}
+.pill-blue {
+  background: radial-gradient(circle at 30% 30%, #4d7dff, #002a7a 70%);
+  border: 1px solid rgba(90, 140, 255, 0.6);
+  box-shadow: 0 0 6px -1px rgba(80, 120, 255, 0.6) inset,
+    0 0 4px rgba(60, 100, 255, 0.5);
+}
+.pill-red::after,
+.pill-blue::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: inherit;
+  background: linear-gradient(
+    150deg,
+    rgba(255, 255, 255, 0.35),
+    transparent 42%
+  );
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+.pill-blue.active,
+.pill-red.active {
+  box-shadow: 0 0 0 2px #0f0, 0 0 12px #0f0 inset;
+}

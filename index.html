@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clay Hefner</title>
+    <meta
+      name="description"
+      content="Product leader building modern fintech. Music lover. Tinkerer."
+    />
+    <meta name="theme-color" content="#0b0d12" />
+    <meta property="og:title" content="Clay Hefner — Personal Site" />
+    <meta
+      property="og:description"
+      content="Product leader building modern fintech. Music lover. Tinkerer."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/og-image.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for brand icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg"></div>
+    <main class="wrap">
+      <header class="header">
+        <div class="avatar-wrap">
+          <img
+            src="assets/headshot.png"
+            alt="Photo of Clay Hefner"
+            class="avatar"
+          />
+        </div>
+        <div class="intro">
+          <h1>Clay Hefner</h1>
+          <p class="tagline">
+            Director of Product @ Preczn • FinTech • Builder • DJ on the side
+          </p>
+          <div class="actions">
+            <!-- Removed About button -->
+            <!-- Theme toggle removed for dark mode only -->
+          </div>
+        </div>
+      </header>
+
+      <section id="about" class="card">
+        <h2>About</h2>
+        <p>
+          I’m a product leader focused on embedded payments, KYC/AML, and
+          developer tools (APIs, JSON schemas, and docs). I enjoy shipping
+          innovation solutions. Outside of work, I’m a music lover and DJ,
+          sharing an occasional late-night mix on Mixcloud.
+        </p>
+        <ul class="highlights">
+          <li>Product strategy & innovation</li>
+          <li>Fintech & Payments</li>
+          <li>APIs, JSON schemas, and docs</li>
+          <li>React, Node.js, and prototyping</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Find me</h2>
+        <div class="socials">
+          <a
+            class="social"
+            href="https://www.linkedin.com/in/clayhefner/"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="LinkedIn"
+          >
+            <i class="fa-brands fa-linkedin"></i><span>LinkedIn</span>
+          </a>
+          <a
+            class="social"
+            href="https://github.com/clayhefner"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="GitHub"
+          >
+            <i class="fa-brands fa-github"></i><span>GitHub</span>
+          </a>
+          <a
+            class="social"
+            href="https://www.mixcloud.com/clayhefner/"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Mixcloud"
+          >
+            <i class="fa-brands fa-mixcloud"></i><span>Mixcloud</span>
+          </a>
+          <a
+            class="social"
+            href="https://www.instagram.com/clayhefner/"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Instagram"
+          >
+            <i class="fa-brands fa-instagram"></i><span>Instagram</span>
+          </a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>
+          © <span id="year"></span> Clay Hefner. Built with ❤️ and hosted on
+          GitHub Pages.
+        </p>
+        <div class="pill-row" aria-label="Choose your pill">
+          <button id="redPill" aria-label="Red pill" class="pill-btn pill-red">
+            Red
+          </button>
+          <button
+            id="bluePill"
+            aria-label="Blue pill"
+            class="pill-btn pill-blue"
+          >
+            Blue
+          </button>
+        </div>
+      </footer>
+      <!-- Red pill easter egg trigger -->
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
